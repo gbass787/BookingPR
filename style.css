@@ -1,0 +1,93 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+  }
+  
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-right: auto;
+  }
+  
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+  }
+  
+  .search-container {
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .search-container form {
+    display: inline-block;
+  }
+  
+  .search-container input[type="text"] {
+    width: 60%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    margin-right: 0.5rem;
+  }
+  
+  .search-container button[type="submit"] {
+    padding: 0.5rem 1rem;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .forms-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .forms-container form {
+    width: 45%;
+    background-color: #fff;
+    padding: 1rem;
+    text-align: center;
+    margin: 0.5rem;
+    box-shadow: 0px 0px 10px #ccc;
+  }
+  
+  .forms-container form input[type="text"],
+  .forms-container form input[type="password"] {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .forms-container form button[type="submit"] {
+    padding: 0.5rem 1rem;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+  }
+  
