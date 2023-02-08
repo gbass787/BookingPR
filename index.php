@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +15,24 @@
 <header>
   <nav>
     <div class="logo">Company Logo</div>
+    <ul class="menu-member">
+  <?php
+    if(isset($_SESSION["userid"]))
+    {
+  ?>
+    <li><a href="#"><?php echo $_SESSION["userid"]; ?></a></li>
+    <li><a href="includes/logout.inc.php">LOG OUT</a></li>
+  <?php
+    }
+    else
+    {
+  ?>
+    <li><a href="#">SIGN UP</a></li>
+    <li><a href="#">LOG IN</a></li>
+  <?php
+    }
+  ?>
+</ul>
   </nav>
 </header>
 
@@ -30,7 +52,7 @@
       <form action="includes/signup.inc.php" method="post">
         <input type="text" name="uid" placeholder="Username">
         <input type="password" name="pwd" placeholder="Password">
-        <input type="password" name="pwdrepeat" placeholder="Repeat Password">
+        <input type="password" name="pwdRepeat" placeholder="Repeat Password">
         <input type="text" name="email" placeholder="E-mail">
         <br>
         <button type="submit" name="submit">SIGN UP</button>
