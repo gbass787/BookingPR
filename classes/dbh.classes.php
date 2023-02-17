@@ -8,10 +8,11 @@ class Dbh {
             $password = "";
             $dbh = new PDO('mysql:host=localhost;dbname=booklogin', $username, $password);
             return $dbh;
-        }
+        } 
         catch (PDOException $e) {
             print "Error!: " . $e->getMessage() . "<br/>";
             die();
         }
     }
+
 }

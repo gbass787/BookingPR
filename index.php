@@ -1,79 +1,49 @@
 <?php
-    session_start();
+    include_once "header.php";
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, intial-scale=1.0">
-    <title>BookingPR - Home</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<section class="index-intro">
+    <div class="index-intro-bg">
+        <div class="wrapper">
+        </div>
+    </div>
+</section>
 
-<header>
-  <nav>
-    <div class="logo">Company Logo</div>
-    <ul class="menu-member">
-  <?php
-    if(isset($_SESSION["userid"]))
-    {
-  ?>
-    <li><a href="#"><?php echo $_SESSION["userid"]; ?></a></li>
-    <li><a href="includes/logout.inc.php">LOG OUT</a></li>
-  <?php
-    }
-    else
-    {
-  ?>
-    <li><a href="#">SIGN UP</a></li>
-    <li><a href="#">LOG IN</a></li>
-  <?php
-    }
-  ?>
-</ul>
-  </nav>
-</header>
-
-<main>
-  <div class="search-container">
-    <form action="search.php" method="get">
-      <input type="text" name="query" placeholder="Search for Artists or Groups">
+<section class="index-search">
+  <div class="wrapper">
+    <form action="#" method="get">
+      <input type="text" name="q" placeholder="Search...">
       <button type="submit">Search</button>
     </form>
   </div>
+</section>
 
 <section class="index-login">
-  <div class="wrapper">
-    <div class="index-login-signup">
-      <h4>SIGN UP</h4>
-      <p>Don't have an account yet? Sign up here!</p>
-      <form action="includes/signup.inc.php" method="post">
-        <input type="text" name="uid" placeholder="Username">
-        <input type="password" name="pwd" placeholder="Password">
-        <input type="password" name="pwdRepeat" placeholder="Repeat Password">
-        <input type="text" name="email" placeholder="E-mail">
-        <br>
-        <button type="submit" name="submit">SIGN UP</button>
-      </form>
+    <div class="wrapper">
+        <div class="index-login-signup">
+            <h4>SIGN UP</h4>
+            <p>Don't have an account yet? Sign up here!</p>
+            <form action="includes/signup.inc.php" method="post">
+                <input type="text" name="uid" placeholder="Username">
+                <input type="password" name="pwd" placeholder="Password">
+                <input type="password" name="pwdrepeat" placeholder="Repeat Password">
+                <input type="text" name="email" placeholder="E-mail">
+                <br>
+                <button type="submit" name="submit">SIGN UP</button>
+            </form>
+        </div>
+        <div class="index-login-login">
+            <h4>LOGIN</h4>
+            <p>Don't have an account yet? Sign up here!</p>
+            <form action="includes/login.inc.php" method="post">
+                <input type="text" name="uid" placeholder="Username">
+                <input type="password" name="pwd" placeholder="Password">
+                <br>
+                <button type="submit" name="submit">LOGIN</button>
+            </form>
+        </div>
     </div>
-    <div class="index-login-login">
-      <h4>LOGIN</h4>
-      <p>Don't have an account yet? Sign up here!</p>
-      <form action="includes/login.inc.php" method="post">
-        <input type="text" name="uid" placeholder="Username">
-        <input type="password" name="pwd" placeholder="Password">
-        <br>
-        <button type="submit" name="submit">LOGIN</button>  
-      </form>
-    </div>
-  </div>
 </section>
-</main>
-
-<footer>
-  <p>Copyright &copy; 2023</p>
-</footer>
-
+    
 </body>
+</html>

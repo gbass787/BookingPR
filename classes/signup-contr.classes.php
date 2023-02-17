@@ -6,7 +6,7 @@ class SignupContr extends Signup {
     private $pwd;
     private $pwdRepeat;
     private $email;
-
+    
     public function __construct($uid, $pwd, $pwdRepeat, $email) {
         $this->uid = $uid;
         $this->pwd = $pwd;
@@ -30,12 +30,14 @@ class SignupContr extends Signup {
             header("location: ../index.php?error=email");
             exit();
         }
-        if($this->pwdMatch() == false) {
+        if($this->pwdMatch() == false)
+        {
             // echo "Passwords don't match!";
             header("location: ../index.php?error=passwordmatch");
             exit();
         }
-        if($this->uidTakenCheck() == false) {
+        if($this->uidTakenCheck() == false)
+        {
             // echo "Username or email taken!";
             header("location: ../index.php?error=useroremailtaken");
             exit();
@@ -43,14 +45,13 @@ class SignupContr extends Signup {
 
         $this->setUser($this->uid, $this->pwd, $this->email);
     }
-    
+
     private function emptyInput() {
         $result;
         if(empty($this->uid) || empty($this->pwd) || empty($this->pwdRepeat) || empty($this->email)) {
             $result = false;
         }
-        else
-        {
+        else {
             $result = true;
         }
         return $result;
@@ -58,11 +59,11 @@ class SignupContr extends Signup {
 
     private function invalidUid() {
         $result;
-        if (!preg_match("/^[a-zA-Z0-9]*$/", $this->uid))
+        if (!preg_match("/^[a-zA-Z0-9]*$/", $this->uid)) 
         {
             $result = false;
         }
-        else
+        else 
         {
             $result = true;
         }
@@ -71,11 +72,11 @@ class SignupContr extends Signup {
 
     private function invalidEmail() {
         $result;
-        if (!filter_var($this->email, FILTER_VALIDATE_EMAIL))
+        if (!filter_var($this->email, FILTER_VALIDATE_EMAIL)) 
         {
             $result = false;
         }
-        else
+        else 
         {
             $result = true;
         }
@@ -84,11 +85,11 @@ class SignupContr extends Signup {
 
     private function pwdMatch() {
         $result;
-        if ($this->pwd !== $this->pwdRepeat)
+        if ($this->pwd !== $this->pwdRepeat) 
         {
             $result = false;
         }
-        else
+        else 
         {
             $result = true;
         }
@@ -97,15 +98,20 @@ class SignupContr extends Signup {
 
     private function uidTakenCheck() {
         $result;
-        if (!$this->checkUser($this->uid, $this->email))
+        if (!$this->checkUser($this->uid, $this->email)) 
         {
             $result = false;
         }
-        else
+        else 
         {
             $result = true;
         }
         return $result;
+    }
+
+    public function fetchUserId($uid) {
+        $userId = $this->getUserId($uid);
+        return $userId[0]["users_id"];
     }
 
 }

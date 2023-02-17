@@ -1,20 +1,17 @@
 <?php
 
-class LoginContr extends Login
-{
+class loginContr extends Login {
 
     private $uid;
     private $pwd;
-
-    public function __construct($uid, $pwd)
-    {
+    
+    public function __construct($uid, $pwd) {
         $this->uid = $uid;
         $this->pwd = $pwd;
     }
 
-    public function loginUser()
-    {
-        if ($this->emptyInput() == false) {
+    public function loginUser() {
+        if($this->emptyInput() == false) {
             // echo "Empty input!";
             header("location: ../index.php?error=emptyinput");
             exit();
@@ -23,14 +20,15 @@ class LoginContr extends Login
         $this->getUser($this->uid, $this->pwd);
     }
 
-    private function emptyInput()
-    {
+    private function emptyInput() {
         $result;
-        if (empty($this->uid) || empty($this->pwd)) {
+        if(empty($this->uid) || empty($this->pwd)) {
             $result = false;
-        } else {
+        }
+        else {
             $result = true;
         }
         return $result;
     }
+
 }
