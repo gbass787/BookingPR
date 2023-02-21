@@ -1,0 +1,27 @@
+.signup-container{
+    background: url('../Images/background2.jpg') center center/cover no-repeat;
+    height:100vh;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow:inset 0 0 0 1000px rgba(0,0,0,0.2);
+    object-fit: contain;
+}
+
+.signup-label{
+    color:#fff;
+}
+
+.signup-title{
+    color:#fff;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.signup-wrapper{
+    justify-content: center;
+    align-items: center;
+} 
