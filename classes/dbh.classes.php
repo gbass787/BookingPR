@@ -15,4 +15,8 @@ class Dbh {
         }
     }
 
+    public function getConnection() {
+        return $this->connect();
+    }
+
 }

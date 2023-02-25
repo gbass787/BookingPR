@@ -11,7 +11,7 @@
 
 <section class="index-search">
   <div class="wrapper">
-    <form action="#" method="get">
+    <form action="search_results.php" method="get">
       <input type="text" name="q" placeholder="Search...">
       <button type="submit">Search</button>
     </form>
