@@ -22,8 +22,8 @@
     <?php
         if (isset($_GET['q'])) {
             $search = $_GET['q'];
-            $stmt = $conn->prepare("SELECT p.*, u.users_uid FROM profiles p JOIN users u ON p.users_id = u.users_id WHERE p.users_id LIKE ? OR p.profiles_region LIKE ? OR p.profiles_genre LIKE ? OR p.profiles_type LIKE ?");
-            $stmt->execute(["%$search%", "%$search%", "%$search%", "%$search%"]);
+            $stmt = $conn->prepare("SELECT p.*, u.users_uid FROM profiles p JOIN users u ON p.users_id = u.users_id WHERE p.users_id LIKE ? OR p.profiles_region LIKE ? OR p.profiles_genre LIKE ? OR p.profiles_type LIKE ? OR u.users_uid LIKE ?");
+            $stmt->execute(["%$search%", "%$search%", "%$search%", "%$search%", "%$search%"]);
 
             if ($stmt->rowCount() > 0) {
                 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
